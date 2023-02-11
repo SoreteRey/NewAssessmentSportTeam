@@ -13,36 +13,21 @@ class TeamListTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
     }
 
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return TeamController.sharedInstance.teams.count
+        
+        return 5
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell", for: indexPath) as? TeamTableViewCell else { return UITableViewCll() }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell", for: indexPath)
         
-        let team = TeamController.sharedInstance.teams[indexPath.row]
-        cell.update
+        return cell
+    }
 
-//        let team = TeamController.sharedInstance.teams[indexPath.row]
-//        cell.updateViews(team: team)
-//
-//        return cell
-//    }
-//
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            let team = TeamController.sharedInstance.teams[indexPath.row]
-//            TeamController.sharedInstance.deleteTeam(team: team)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        }
-//    }
 //
 //    // MARK: - Navigation
 //
@@ -55,4 +40,4 @@ class TeamListTableViewController: UITableViewController {
 //            }
 //        }
     }
-}
+
