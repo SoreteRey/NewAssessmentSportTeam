@@ -10,7 +10,7 @@ import UIKit
 class TeamDetailViewController: UIViewController {
     
     // MARK: - Outlets
-   
+    
     @IBOutlet weak var teamNameTextField: UITextField!
     @IBOutlet weak var teamCountTextField: UITextField!
     @IBOutlet weak var teamRankTextField: UITextField!
@@ -18,23 +18,23 @@ class TeamDetailViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews(team: team)
+    }
+    // MARK: - Properties
+    var team: SportTeam?
+    
+    // MARK: - Actions
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
         
     }
-    // MARK: - Actions
- 
-    @IBAction func saveButtonTapped(_ sender: Any) {
-   
-    //        guard let name = teamTitleTextField.text, !name.isEmpty,
-    //              let count = teamCounterTextField.text, !count.isEmpty,
-    //              let  ranking = teamRankingTextField.text, !ranking.isEmpty else { return }
-  
-    //}
-    //// MARK: - Helper
-    //func updateViews(team: SportTeam?) {
-    //    guard let team = team else { return }
-    //    teamTitleTextField.text = team.name
-    //    teamCounterTextField.text = team.count
-    //    teamRankingTextField.text = team.ranking
-    //
-    //}
+    
+    // MARK: - Helper
+    func updateViews(team: SportTeam?) {
+        guard let team = team else { return }
+        teamNameTextField.text = team.name
+        teamCountTextField.text = "\(team.count) Players"
+        teamRankTextField.text = "\(team.ranking) World Wide!"
+    }
+    
 }
