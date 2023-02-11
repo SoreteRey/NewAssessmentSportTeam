@@ -27,8 +27,8 @@ class TeamController {
     }
     
     func deleteTeam(team: SportTeam) {
-        guard let index = teams.firstIndex(of: team) else { return }
-        teams.remove(at: index)
+        guard let index = TeamController.sharedInstance.teams.firstIndex(of: team) else { return }
+        TeamController.sharedInstance.teams.remove(at: index)
     }
 }//end of class
 

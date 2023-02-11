@@ -18,6 +18,7 @@ class TeamDetailViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         updateViews(team: team)
     }
     // MARK: - Properties
@@ -41,12 +42,38 @@ class TeamDetailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func clearButtonTapped(_ sender: Any) {
+        resetView()
+    }
+    
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        deleteView()
+    }
+    
+    
+    
     // MARK: - Helper
     func updateViews(team: SportTeam?) {
         guard let team = team else { return }
         teamNameTextField.text = team.name
         teamCountTextField.text = "\(team.count)"
         teamRankTextField.text = "\(team.ranking)"
+    }
+    
+    func resetView() {
+        teamNameTextField.text = ""
+        teamCountTextField.text = ""
+        teamRankTextField.text = ""
+    }
+    
+    func deleteView() {
+        if let team = team {
+            guard let index = TeamController.sharedInstance.teams.firstIndex(of: team) else { return }
+            TeamController.sharedInstance.teams.remove(at: index)
+            resetView()
+            
+        }
+        navigationController?.popViewController(animated: true)
     }
     
 }

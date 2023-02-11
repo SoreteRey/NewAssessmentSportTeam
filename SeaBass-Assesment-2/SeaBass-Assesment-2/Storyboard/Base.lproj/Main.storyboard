@@ -17,9 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport Team List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p3i-Ct-jd9">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="teamCell" rowHeight="100" id="Mgs-Jc-Y7H" customClass="TeamTableViewCell" customModule="SeaBass_Assesment_2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="100"/>
+                                <rect key="frame" x="0.0" y="94" width="393" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mgs-Jc-Y7H" id="Eq4-dN-im7">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
@@ -31,7 +38,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfh-8v-sQy">
                                                     <rect key="frame" x="0.0" y="0.0" width="349" height="45.666666666666664"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KDe-Uq-EQm">
@@ -40,13 +47,13 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(count)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txX-uo-jSX">
                                                             <rect key="frame" x="0.0" y="0.0" width="55.666666666666664" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="(rank)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEk-h6-7lB">
                                                             <rect key="frame" x="63.666666666666657" y="0.0" width="285.33333333333337" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -54,6 +61,8 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
+                                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="lDo-f9-imq" firstAttribute="leading" secondItem="Eq4-dN-im7" secondAttribute="leadingMargin" constant="2" id="3oD-W3-4cJ"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="lDo-f9-imq" secondAttribute="bottom" constant="2" id="4Sd-7u-5FL"/>
@@ -71,7 +80,7 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" id="IeN-0w-hiM">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="G1a-Nk-Et3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="G1a-Nk-Et3">
                             <connections>
                                 <segue destination="ILP-5H-m34" kind="show" id="a04-Oa-z6K"/>
                             </connections>
@@ -107,18 +116,42 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YHE-dU-4Id">
                                         <rect key="frame" x="0.0" y="42" width="373" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount of plyers..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0gd-FJ-jzk">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="247" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount of plyers..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0gd-FJ-jzk">
                                                 <rect key="frame" x="0.0" y="0.0" width="203" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter team ranking..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XGv-JP-dgq">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter team ranking..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XGv-JP-dgq">
                                                 <rect key="frame" x="211" y="0.0" width="162" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="Hqx-xV-s1W">
+                                <rect key="frame" x="80.333333333333329" y="279" width="232.33333333333337" height="34.333333333333314"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNB-mr-oFC">
+                                        <rect key="frame" x="0.0" y="0.0" width="76.333333333333329" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Clear"/>
+                                        <connections>
+                                            <action selector="clearButtonTapped:" destination="ILP-5H-m34" eventType="touchUpInside" id="y85-eC-yxW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGk-eZ-f7t" customClass="deleteCell">
+                                        <rect key="frame" x="156.33333333333331" y="0.0" width="76" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Delete">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="deleteButtonTapped:" destination="ILP-5H-m34" eventType="touchUpInside" id="Csq-gp-MXI"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -128,10 +161,14 @@
                             <constraint firstItem="atZ-uH-ZgS" firstAttribute="top" secondItem="oMu-Kz-yHM" secondAttribute="bottom" constant="10" id="3xW-VJ-YH2"/>
                             <constraint firstItem="oMu-Kz-yHM" firstAttribute="leading" secondItem="0y4-w9-v2X" secondAttribute="leading" constant="8" id="Ct1-QM-MdN"/>
                             <constraint firstItem="oMu-Kz-yHM" firstAttribute="top" secondItem="0y4-w9-v2X" secondAttribute="top" constant="8" id="KQ7-m3-W1O"/>
+                            <constraint firstItem="Hqx-xV-s1W" firstAttribute="top" secondItem="0y4-w9-v2X" secondAttribute="top" constant="176" id="V7a-Iq-Sqg"/>
                             <constraint firstItem="oMu-Kz-yHM" firstAttribute="centerX" secondItem="0y4-w9-v2X" secondAttribute="centerX" id="ZXR-JP-NIa"/>
+                            <constraint firstItem="Hqx-xV-s1W" firstAttribute="leading" secondItem="0y4-w9-v2X" secondAttribute="leading" constant="80.333333333333329" id="fgi-gC-poc"/>
                             <constraint firstItem="0y4-w9-v2X" firstAttribute="trailing" secondItem="atZ-uH-ZgS" secondAttribute="trailing" constant="10" id="fwJ-TR-oxM"/>
                             <constraint firstItem="0y4-w9-v2X" firstAttribute="trailing" secondItem="oMu-Kz-yHM" secondAttribute="trailing" constant="8" id="gvD-P5-IFI"/>
                             <constraint firstItem="atZ-uH-ZgS" firstAttribute="leading" secondItem="0y4-w9-v2X" secondAttribute="leading" constant="10" id="jzY-6e-b3d"/>
+                            <constraint firstItem="Hqx-xV-s1W" firstAttribute="centerX" secondItem="0y4-w9-v2X" secondAttribute="centerX" id="xoO-E9-ayK"/>
+                            <constraint firstItem="0y4-w9-v2X" firstAttribute="trailing" secondItem="Hqx-xV-s1W" secondAttribute="trailing" constant="80.333333333333314" id="yns-bG-5zk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8SU-5T-Jde">
@@ -176,6 +213,12 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
