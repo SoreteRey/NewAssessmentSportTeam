@@ -21,7 +21,7 @@ class TeamTableViewCell: UITableViewCell {
     // MARK: - Methods
     func updateViews(team: SportTeam) {
         teamNameLabel.text = team.name
-        teamCountLabel.text = "\(team.count) Players"
-        teamRankLabel.text = "\(team.ranking) World Wide!"
+        teamCountLabel.text = "\(team.count)"
+        teamRankLabel.text = "\(team.ranking)"
     }
 }// end of class

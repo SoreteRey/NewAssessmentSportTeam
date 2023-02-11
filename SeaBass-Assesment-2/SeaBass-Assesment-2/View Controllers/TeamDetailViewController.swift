@@ -26,15 +26,27 @@ class TeamDetailViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let name = teamNameTextField.text, !name.isEmpty,
+              let count = teamCountTextField.text, !count.isEmpty,
+              let rank = teamRankTextField.text, !rank.isEmpty else { return }
         
+        let unwrappedCount = Int(count) ?? 0
+        let unwrappedRank = Int(rank) ?? 0
+        
+        if let team = team {
+            TeamController.sharedInstance.updateTeam(team: team, name: name, count: unwrappedCount, ranking: unwrappedRank)
+        } else {
+            TeamController.sharedInstance.createTeam(name: name, count: unwrappedCount, ranking: unwrappedRank)
+        }
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Helper
     func updateViews(team: SportTeam?) {
         guard let team = team else { return }
         teamNameTextField.text = team.name
-        teamCountTextField.text = "\(team.count) Players"
-        teamRankTextField.text = "\(team.ranking) World Wide!"
+        teamCountTextField.text = "\(team.count)"
+        teamRankTextField.text = "\(team.ranking)"
     }
     
 }
