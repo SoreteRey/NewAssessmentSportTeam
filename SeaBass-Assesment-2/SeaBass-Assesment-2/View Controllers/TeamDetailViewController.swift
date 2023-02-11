@@ -10,9 +10,10 @@ import UIKit
 class TeamDetailViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBAction func teamTitleTextField(_ sender: Any) {}
-    @IBAction func teamCounterTextField(_ sender: Any) {}
-    @IBAction func teamRankingTextField(_ sender: Any) {}
+   
+    @IBOutlet weak var teamNameTextField: UITextField!
+    @IBOutlet weak var teamCountTextField: UITextField!
+    @IBOutlet weak var teamRankTextField: UITextField!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -20,12 +21,13 @@ class TeamDetailViewController: UIViewController {
         
     }
     // MARK: - Actions
-    //    @IBAction func saveButtonTapped(_ sender: Any) {
+ 
+    @IBAction func saveButtonTapped(_ sender: Any) {
+   
     //        guard let name = teamTitleTextField.text, !name.isEmpty,
     //              let count = teamCounterTextField.text, !count.isEmpty,
     //              let  ranking = teamRankingTextField.text, !ranking.isEmpty else { return }
-    //
-    //    }
+  
     //}
     //// MARK: - Helper
     //func updateViews(team: SportTeam?) {

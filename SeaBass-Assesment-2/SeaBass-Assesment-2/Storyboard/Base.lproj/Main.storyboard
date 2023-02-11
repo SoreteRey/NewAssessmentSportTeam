@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -62,18 +63,87 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="lZR-Jq-z9t" id="2p8-5H-fEp"/>
-                            <outlet property="delegate" destination="lZR-Jq-z9t" id="N1h-TR-Xph"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="IeN-0w-hiM">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="G1a-Nk-Et3"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="G1a-Nk-Et3">
+                            <connections>
+                                <segue destination="ILP-5H-m34" kind="show" id="goz-nV-jPo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHP-i2-QWE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="872.51908396946567" y="-323.23943661971833"/>
+        </scene>
+        <!--Team Detail View Controller-->
+        <scene sceneID="l3c-Ck-wse">
+            <objects>
+                <viewController id="ILP-5H-m34" customClass="TeamDetailViewController" customModule="SeaBass_Assesment_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FSP-se-8S5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write your sport team here..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMu-Kz-yHM">
+                                <rect key="frame" x="8" y="111" width="377" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="atZ-uH-ZgS">
+                                <rect key="frame" x="10" y="154.66666666666666" width="373" height="76"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter team name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xDT-yb-Pdz">
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YHE-dU-4Id">
+                                        <rect key="frame" x="0.0" y="42" width="373" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount of plyers..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0gd-FJ-jzk">
+                                                <rect key="frame" x="0.0" y="0.0" width="203" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter team ranking..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XGv-JP-dgq">
+                                                <rect key="frame" x="211" y="0.0" width="162" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0y4-w9-v2X"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="atZ-uH-ZgS" firstAttribute="top" secondItem="oMu-Kz-yHM" secondAttribute="bottom" constant="10" id="3xW-VJ-YH2"/>
+                            <constraint firstItem="oMu-Kz-yHM" firstAttribute="leading" secondItem="0y4-w9-v2X" secondAttribute="leading" constant="8" id="Ct1-QM-MdN"/>
+                            <constraint firstItem="oMu-Kz-yHM" firstAttribute="top" secondItem="0y4-w9-v2X" secondAttribute="top" constant="8" id="KQ7-m3-W1O"/>
+                            <constraint firstItem="oMu-Kz-yHM" firstAttribute="centerX" secondItem="0y4-w9-v2X" secondAttribute="centerX" id="ZXR-JP-NIa"/>
+                            <constraint firstItem="0y4-w9-v2X" firstAttribute="trailing" secondItem="atZ-uH-ZgS" secondAttribute="trailing" constant="10" id="fwJ-TR-oxM"/>
+                            <constraint firstItem="0y4-w9-v2X" firstAttribute="trailing" secondItem="oMu-Kz-yHM" secondAttribute="trailing" constant="8" id="gvD-P5-IFI"/>
+                            <constraint firstItem="atZ-uH-ZgS" firstAttribute="leading" secondItem="0y4-w9-v2X" secondAttribute="leading" constant="10" id="jzY-6e-b3d"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8SU-5T-Jde">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="o39-Lx-Reb">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="ILP-5H-m34" id="aRs-ih-PZI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="teamCountTextField" destination="0gd-FJ-jzk" id="0t7-cA-XAB"/>
+                        <outlet property="teamNameTextField" destination="xDT-yb-Pdz" id="xk9-u6-l1m"/>
+                        <outlet property="teamRankTextField" destination="XGv-JP-dgq" id="8i2-Ft-t8d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3bV-3z-JMx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1705" y="-323"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ofF-Rg-jrS">
